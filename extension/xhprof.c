@@ -1006,7 +1006,10 @@ static char *hp_get_function_name(zend_op_array *ops TSRMLS_DC) {
         ret      = (char *)emalloc(len);
         snprintf(ret, len, "run_init::%s", filename);
       } else {
-        ret = estrdup(func);
+        //ret = estrdup(func);
+char strtmp[30] = "";
+snprintf(strtmp, 28, "%s-%d", "???_op", curr_op);
+ret = estrdup(strtmp);
       }
     }
   }
